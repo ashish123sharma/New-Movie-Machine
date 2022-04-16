@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+   <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+    <div id="container">
+        <input type="text" id="movies" placeholder="Find Movies"> 
+        <input type="button" id="submit" value="submit"> 
+ </div>
+        <div id="background1">
+                <div id="background">
+                     <div id="res">
+      
+                 <div id="inside"></div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script  >
+
+    
+
+//  let key= "a7e0000f"
+// const url = "http://www.omdbapi.com/?&pikey=a7e0000f&t=spiderman"
+
+document.getElementById("submit").addEventListener("click",fun)
+
+// function 
+// const container = document.getElementById("container")
+//  we have two promisses 1st fetch(url) with streamline and 2nd to collet data
+// fun()
+async function fun(){
+    try{    
+        var search = document.getElementById("movies").value 
+        let result = await fetch(`https://omdbapi.com/?&apikey=a7e0000f&s=${search}`) ; 
+
+    let data = await result.json() ;
+    console.log(data) ; 
+    print(data.Search); 
+    }
+    catch (err){
+        console.log("error :",err)
+    }
+}
+
+
+function print(data){
+    data.map(function (e){
+        var div = document.createElement("div")
+        div.id="imageShow"
+        var h3 = document.createElement('h3')
+        h3.textContent=e.Title
+        h3.id="movie_Name"
+        var img = document.createElement("img")
+        img.src = e.Poster 
+        var rating 
+
+        div.append(img,h3);
+        document.getElementById("inside").append(div);
+    })
+}
+
+</script>

@@ -1,0 +1,49 @@
+#movies{
+margin: auto;
+height:30px;
+width:120px;
+}
+#submit{
+margin: auto;
+height:30px;
+width:120px;
+}
+#background1{
+    background-image: url("https://www.reviewgeek.com/p/uploads/2018/01/b7fff5ed.jpg")
+
+}
+
+#res{
+    /* display: grid; */
+   
+    margin: auto;
+   
+    display: flex ; 
+    justify-content:space-around;
+}
+#inside{
+    margin: auto;
+    height:fit-content;
+    width:90%;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+   grid-template-rows: auto ;
+   /* margin-top: 30px; */
+
+
+}
+#movie_Name{
+    color:white;
+    cursor: pointer;
+}
+#background{
+    margin-top: 20px;
+    background-image: url("http://s1.picswalls.com/wallpapers/2017/12/10/4k-desktop-wallpaper_110627716_312.jpg");
+
+}
+#container{
+    margin: auto;
+}
+#imageShow{
+    cursor: pointer;
+}
